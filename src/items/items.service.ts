@@ -18,10 +18,16 @@ export class ItemsService {
     updateProduct(item:Item):Item{
         return this.items.updateItem(item)
     }
+    
+    patchProduct(item:Item):Item{
+        return this.items.patchItem(item)
+    }
+
 
     deleteProduct(id:number):Item[]{
         return this.items.deleteItem(id)
     }
+
 
 
 }

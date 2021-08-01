@@ -39,11 +39,17 @@ export class ItemClass implements Item{
     
     updateItem(item:Item):Item{
         let index = this.items.findIndex((obj) => obj.id === item.id)
+        this.items.splice(index, 1)
+        this.items.push(item)                
+        return item
+    }
+
+    patchItem(item:Item):Item{
+        let index = this.items.findIndex((obj) => obj.id === item.id)
         let newItem = this.items[index]
         newItem.id = item.id
         newItem.name = item.name
         newItem.price = item.price
-        
         return newItem
     }
 
